@@ -47,9 +47,17 @@ input.addEventListener("keyup", ev => {
 //Eliminamos la fila que queramos
 inputDelete.addEventListener("keyup", ev => {
   if (ev.keyCode == 13) {
-    if (inputDelete.value <= hijos.length && inputDelete.value >= 0) {
+    if (
+      inputDelete.value <= hijos.length &&
+      inputDelete.value >= 0 &&
+      hijos.length > 0
+    ) {
       container.removeChild(hijos[inputDelete.value]);
-    } else if (inputDelete.value > hijos.length || inputDelete.value < 0) {
+    } else if (
+      inputDelete.value > hijos.length ||
+      inputDelete.value < 0 ||
+      hijos.length <= 0
+    ) {
       console.error("No se puede eliminar lo que no existe");
     }
   }
