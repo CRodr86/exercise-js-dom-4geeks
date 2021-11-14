@@ -5,7 +5,7 @@
 		alt="js"
 		src="https://cdn.ourcodeworld.com/public-media/articles/articleocw-56bba37e791bc.png">
 <p>
-#### Proyecto realizado durante el curso de 4geeks.
+### Proyecto realizado durante el curso de 4geeks.
 
 Proyecto que reúne la realización de diferentes funciones para el manejo del DOM:
 1. Función para crear títulos aleatorios del H1 - H6
