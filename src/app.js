@@ -10,13 +10,15 @@ document.querySelector("#button").addEventListener("click", () => {
   let div = document.createElement("div");
   div.setAttribute("class", "col");
 
-  //TODO: CREAR UN HN AL AZAR (H1-H2...H6)
-  let randomNumber = Math.floor(Math.random() * 5 + 1);
-  div.innerHTML = `<h${randomNumber}>${input.value.toUpperCase()}</h${randomNumber}>`;
+  // The function generates a random number between 1 and 6 that represents the header type (h1, h2, ..., h6)
+  const generateRandomNumber = () => {
+    return Math.floor(Math.random() * 5 + 1);
+  }
+  div.innerHTML = `<h${generateRandomNumber}>${input.value.toUpperCase()}</h${generateRandomNumber()}>`;
   container.appendChild(div);
 });
 
-//TODO: CREAR LA FUNCIONALIDAD PARA ELIMINAR EL ULTIMO NODO SIN QUE NUNCA DE ERROR
+// This function deletes the last node in the lists by clicking the 'deleteButton'
 document.querySelector("#deleteButton").addEventListener("click", () => {
   if (container.children.length > 0) {
     container.removeChild(container.children[container.children.length - 1]);
@@ -25,7 +27,7 @@ document.querySelector("#deleteButton").addEventListener("click", () => {
   }
 });
 
-//TODO: REFACTORIZAR
+// Refactored code
 input.addEventListener("keyup", ev => {
   if (ev.keyCode == 13) {
     for (let value of container.children) {
@@ -34,8 +36,7 @@ input.addEventListener("keyup", ev => {
   }
 });
 
-//TODO: crea una funcion que elimine de pantalla la columna que corresponda con el indice introducido en deleteInput
-// si pongo un id que no existe debe mostrar un error
+// This function deletes the element whose index is indicated in the input by press the enter key
 deleteInput.addEventListener("keyup", ev => {
   if (ev.keyCode == 13) {
     if (
